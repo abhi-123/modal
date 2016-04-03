@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link href="modal.css" rel="stylesheet" />
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+<script src="jquery-ui.min.css"></script>
+<script type="text/javascript">
+function show(){
+
+document.getElementById("m").innerHTML=new Date();;
+}
+setInterval("show()",1000);
+$(document).ready(function(){
+$('#link').click(function(){
+    $('.main').show({
+		effect:"drop",
+		direction:"left"
+});
+ $("body").css("background-color","#292421"); 
+});
+$('i').click(function(){
+$('.main').hide({
+		effect:"drop",
+		direction:"right"
+});
+$("body").css("background-color","lightblue");
+});
+});
+</script>
+</head>
+<body onLoad="show();">
+
+<div id="m">
+</div>
+
+<a href="#" id="link">Add new Emp</a><span class="text"><b>Click on Add new Emp to open the modal</b></span>
+	<div class="main">
+	
+	<a  href="#"><i class="fa fa-times fa-2x" ></i></a>
+	<div class="register">
+      <h3>Insert the Details</h3>
+      <form id="reg-form">
+        <div>
+          <label for="Name">Name:</label>
+          <input type="text" id="name" spellcheck="false" placeholder="" />
+        </div>
+        <div>
+          <label for="Age">Age:</label>
+          <input type="text" id="age" spellcheck="false" placeholder="" />
+        </div>
+        <div>
+          <label for="Desig">Desig:</label>
+          <input type="text" id="desig" spellcheck="false" placeholder="" />
+        </div>
+        <div>
+          <label for="Salary">Salary:</label>
+          <input type="text" id="sal" />
+        </div>
+        <div>
+          <label for="DOJ">DOJ:</label>
+          <input type="text" id="DOJ" />
+        </div>
+		<div>
+          <label for="DOB">DOB:</label>
+          <input type="text" id="DOB" />
+        </div>
+        <div>
+          <label></label>
+          <input type="submit" value="Add Details" id="Adddetails" class="button" />
+        </div>
+      </form>
+	  
+      </div>
+	  </div>
+</body>
+</html>
